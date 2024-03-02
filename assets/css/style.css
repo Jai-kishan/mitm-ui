@@ -298,11 +298,19 @@ header {
     .slider-captions {
       display: none; } }
 
-.slider-title {
-  font-size: 66px;
+.slider-title-2 {
+  font-size: 33px;
   color: #fff;
   letter-spacing: -3px;
   font-family: "mouse-300", Arial, Helvetica, sans-serif; }
+
+
+  .slider-title {
+    font-size: 66px;
+    color: #fff;
+    letter-spacing: -3px;
+    font-family: "mouse-300", Arial, Helvetica, sans-serif; }
+
 
 .slider-text {
   margin-bottom: 20px;

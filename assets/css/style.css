@@ -826,7 +826,7 @@ header .scroll-to-fixed-fixed {
 }
 
 footer {
-  padding: 50px;
+  padding: 30px;
   background-color: #223d50;
   color: #FFF;
 }
@@ -852,7 +852,7 @@ footer .about .foot-address {
 }
 
 footer .about .foot-address .icon {
-  padding: 20px 10px;
+  padding: 10px 10px;
 }
 
 footer .about .foot-address .addet {
@@ -893,7 +893,7 @@ footer .tags ul li {
 }
 
 .copy {
-  padding: 20px;
+  padding: 10px;
   background-color: #172d3c;
   color: #FFF;
 }

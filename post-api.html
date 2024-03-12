@@ -5,17 +5,19 @@
 </head>
 <body>
   <button id="submit-button">Submit Data</button>
-  <div id="api-response"></div>
+  <!-- <div id="api-response"></div> -->
   <script>
     const submitButton = document.getElementById('submit-button');
     const apiResponseElement = document.getElementById('api-response');
 
     submitButton.addEventListener('click', () => {
-      const apiUrl = 'https://mitm.pythonanywhere.com/api/'; // Replace with your API endpoint
+      const apiUrl = 'https://mitm.pythonanywhere.com/contact_us/'; // Replace with your API endpoint
       const data = {
         name: 'Doe',
-        roll: 14,
-        city : "Delhi"
+        message:"Can you please call me",
+        subject:"inquery",
+        email: 'annu17@navgurukul.org',
+        phone_number : "8340604379"
       };
 
       fetch(apiUrl, {

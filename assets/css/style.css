@@ -169,7 +169,7 @@ body {
 .page-nav {
   padding: 40px;
   text-align: center;
-  padding-top: 160px;
+  padding-top: 77px;
 }
 
 .page-nav ul {
@@ -179,7 +179,7 @@ body {
 
 @media screen and (max-width: 576px) {
   .page-nav {
-    padding-top: 186px;
+    padding-top: 100px;
   }
 }
 
@@ -414,7 +414,7 @@ header .scroll-to-fixed-fixed {
 
 @media screen and (max-width: 450px) {
   .slider {
-    padding-top: 150px;
+    padding-top: 155px;
   }
 }
 

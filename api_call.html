@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>API Call Example</title>
+</head>
+<body>
+  <p>API data will be displayed here: <span id="api-output"></span></p>
+  <script>
+  const apiUrl = 'https://mitm.pythonanywhere.com/api/'; // Replace with your actual API URL
+  const outputElement = document.getElementById('api-output');
+
+  fetch(apiUrl)
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+      outputElement.textContent = JSON.stringify(data, null, 2);  // Display formatted data
+    })
+    .catch(error => {
+      console.error('Error:', error); // Handle errors
+    });
+  </script>
+</body>
+</html>

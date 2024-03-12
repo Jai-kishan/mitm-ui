@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>POST API Example</title>
+</head>
+<body>
+  <button id="submit-button">Submit Data</button>
+  <div id="api-response"></div>
+  <script>
+    const submitButton = document.getElementById('submit-button');
+    const apiResponseElement = document.getElementById('api-response');
+
+    submitButton.addEventListener('click', () => {
+      const apiUrl = 'https://mitm.pythonanywhere.com/api/'; // Replace with your API endpoint
+      const data = {
+        name: 'Doe',
+        roll: 14,
+        city : "Delhi"
+      };
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(responseData => {
+        apiResponseElement.textContent = 'API Response:' + JSON.stringify(responseData, null, 2);
+      })
+      .catch(error => {
+        console.error('Error: ', error);
+        apiResponseElement.textContent = 'An error occurred.';
+      });
+    });
+  </script>
+</body>
+</html>

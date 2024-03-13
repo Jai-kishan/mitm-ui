@@ -65,11 +65,11 @@
                             <li><a href="cources.html">Cources</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="gallery.html">Gallery</a></li> -->
+                            <li><a href="contact_us.html">Contact Us</a></li>
                             <li><a href="">About Us</a></li>
                             <li><a href="">Cources</a></li>
                             <li><a href="">Blog</a></li>
                             <li><a href="">Gallery</a></li>
-                            <li><a href="contact_us.html">Contact Us</a></li>
                             <!-- <li><a href="">Contact Us</a></li> -->
                         </ul>
                     </div>
@@ -137,86 +137,54 @@
                         <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
                         <div class="col-sm-8">
                             <button id="submit-button" class="btn btn-success btn-sm">Send Message</button>
-
+                
                             <script>
                                 const submitButton = document.getElementById('submit-button');
                                 const apiResponseElement = document.getElementById('api-response');
-
+                
                                 submitButton.addEventListener('click', () => {
-                                    const confirmed = window.confirm("Are you sure you want to send this email?");
-                                    if (confirmed) {
-                                        const apiUrl = 'https://mitm.pythonanywhere.com/contact_us/'; // Replace with your API endpoint
-
-                                        const data = {
-                                            name: document.getElementById('name').value,
-                                            message: document.getElementById('message').value,
-                                            subject: "Inquiry",
-                                            email: document.getElementById('email').value,
-                                            phone_number: document.getElementById('phone_number').value
-                                        };
-
-                                        fetch(apiUrl, {
-                                            method: 'POST',
-                                            headers: {
-                                                'Content-Type': 'application/json'
-                                            },
-                                            body: JSON.stringify(data)
+                                    const apiUrl = 'https://mitm.pythonanywhere.com/contact_us/'; // Replace with your API endpoint
+                                   
+                                    const data = {
+                                        name: document.getElementById('name').value,
+                                        message: document.getElementById('message').value,
+                                        subject: "Inquiry",
+                                        email: document.getElementById('email').value,
+                                        phone_number: document.getElementById('phone_number').value
+                                    };
+                                    
+                                    
+                                    fetch(apiUrl, {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(data)
+                                    })
+                                        .then(response => response.json())
+                                        .then(responseData => {
+                                            apiResponseElement.textContent = 'API Response:' + JSON.stringify(responseData, null, 2);
                                         })
-                                            .then(response => response.json())
-                                            .then(responseData => {
-                                                if (responseData) {
-                                                    window.alert("Email sent successfully!");
-                                                    // Clear all input fields
-
-                                                } else {
-                                                    window.alert("Failed to send email. Please try again later.");
-
-                                                }
-
-                                                document.getElementById('name').value = '';
-                                                document.getElementById('email').value = '';
-                                                document.getElementById('phone_number').value = '';
-                                                document.getElementById('message').value = '';
-                                            })
-                                            .catch(error => {
-                                                console.error('Error: ', error);
-                                                window.alert("An error occurred while sending the email.");
-                                            });
-                                    } else {
-                                        // User clicked cancel, do nothing
-                                    }
+                                        .catch(error => {
+                                            console.error('Error: ', error);
+                                            apiResponseElement.textContent = 'An error occurred.';
+                                        });
                                 });
                             </script>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="col-sm-6">
 
                     <div style="margin:50px" class="serv">
                         <h2 style="margin-top:10px;">Address</h2>
                         <h4>Mahavir Institute of Technology & Management</h4>
-                        <p>Thank you for your interest in Mahavir Institute of Technology and Management (MITM). If you
-                            have any inquiries or would like to get in touch with us, please feel free to contact us
-                            using the information provided below:
-                        </p>
-
-                        <!-- Admissions:
-                            If you have questions related to admissions, 
-                            our dedicated admissions office is available to assist you. 
-                            Please feel free to contact them at admissions@mitm.edu or 
-                            call us at +91 XXXXXXXXXX.
-
-                        Social Media:
-                        Stay updated with the latest news, events, 
-                        and announcements by following us on social media: -->
-
-
-                        <!-- Metro Station, Near, A- 66, 1st Floor, Pankha Road <br> Pillar No.640, Uttam
+                        Metro Station, Near, A- 66, 1st Floor, Pankha Road <br> Pillar No.640, Uttam
                         Nagar East <br> Delhi 110059
                         Phone:+91 8448 7265 24<br>
                         Email:kishorr298@gmail.com<br>
-                        Website:<a href="https://mitm.co.in/">www.mitm.co.in</a><br> -->
+                        Website:<a href="https://mitm.co.in/">www.mitm.co.in</a><br>
                     </div>
                 </div>
             </div>
